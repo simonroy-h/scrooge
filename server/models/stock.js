@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-    createdAt: Date,
     updatedAt: Date,
     symbol: String,
     name: String,
@@ -28,7 +27,7 @@ var schema = new mongoose.Schema({
     returnOnEquityRatio: Number,
     quickRatio: Number,
     debtCoveringRatio: Number,
-    freeCashFlow: Boolean
+    freeCashFlow: String
 });
 
 var Stock = new mongoose.model('Stock', schema, 'Stock');

@@ -13,14 +13,15 @@ exports.getStockCreate = (req, res, next) => {
 };
 
 exports.postStockCreate = (req, res, next) => {
-    var body = new Stock(req.body);
+    var body = req.body;
+    body.updatedAt = Date.now();
     if (!body.symbol) {
         res.status(400).send('Stock symbol is missing');
         return;
     }
-    stockService.createStock(body, (err, response) => {
-        if (response) {
-            res.status(201).send(response);
+    stockService.createStock(body, (err, stock) => {
+        if (stock) {
+            res.status(201).redirect('/admin/stocks');
         } else if (err) {
             res.status(400).send(err);
         }
@@ -56,15 +57,13 @@ exports.getStockUpdate = (req, res, next) => {
 
 exports.postStockUpdate = (req, res, next) => {
     var body = req.body;
-
     if (!body.symbol) {
         res.status(400).send('Symbol is missing');
         return;
     }
-    var updateData = body.data || {};
-    stockService.updateStock(body.symbol, updateData, (err, response) => {
+    stockService.updateStock(body.symbol, body, (err, response) => {
         if (response) {
-            res.status(200).send(response);
+            res.status(200).redirect('/admin/stocks');
         } else if (err) {
             res.status(400).send(err);
         }

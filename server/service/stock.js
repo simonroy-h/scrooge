@@ -18,7 +18,7 @@ exports.findStocks = (callback) => {
 }
 
 exports.updateStock = (symbol, data, callback) => {
-    Stock.findByIdAndUpdate({
+    Stock.findOneAndUpdate({
         symbol: symbol
     }, data, (err, res) => {
         callback(err, res);
