@@ -14,8 +14,6 @@ router.post('/stock/:symbol/update', adminController.postStockUpdate);
 
 router.get('/stock/:symbol/delete', adminController.getStockDelete);
 
-router.get('/stock/:symbol', adminController.getStock);
-
 router.get('/stocks', adminController.getStocks)
 
 module.exports = router;

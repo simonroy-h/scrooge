@@ -57,6 +57,7 @@ exports.getStockUpdate = (req, res, next) => {
 
 exports.postStockUpdate = (req, res, next) => {
     var body = req.body;
+    body.updatedAt = Date.now();
     if (!body.symbol) {
         res.status(400).send('Symbol is missing');
         return;
@@ -93,30 +94,6 @@ exports.getStockDelete = (req, res, next) => {
                     message: 'No data found'
                 });
             }
-        }
-    });
-};
-
-exports.getStock = (req, res, next) => {
-    var params = req.params || {};
-    var query = {
-        symbol: params.symbol
-    };
-    if (!query) {
-        res.status(400).send('Bad request');
-        return;
-    }
-    stockService.findStock(query, (err, response) => {
-        if (err) {
-            res.status(404).send(err);
-            return;
-        }
-        if (response) {
-            res.status(200).json(response);
-            return;
-        }
-        if (!response) {
-            res.status(204).send('No data found');
         }
     });
 };
