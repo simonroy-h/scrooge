@@ -1,0 +1,59 @@
+        <%- include('includes/header.ejs') %>
+
+    </head>
+
+    <body style="background-color: snow;">
+        <%- include('includes/navbar.ejs') %>
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Stocks</li>
+            </ol>
+        </nav>
+
+        <h1 style="padding: 10px 40px;">Stocks</h1>
+
+        <div style="text-align: right; padding: 0px 100px;">
+            <a href="/admin/stock/create"><button type="button" class="btn btn-dark">Create</button></a>
+        </div>
+
+        <div style="margin: auto; width:90%; padding: 25px;">
+            <table class="table table-bordered" id="stocks">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Company Name</th>
+                        <th>Stock Exchange</th>
+                        <th>Sector</th>
+                        <th>Industry</th>
+                        <th>Created At</th>
+                        <th>Updated At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% stocks.forEach(stock => { %>
+                        <tr>
+                            <td><%= stock.symbol %></td>
+                            <td><%= stock.name %></td>
+                            <td><%= stock.exchange %></td>
+                            <td><%= stock.sector %></td>
+                            <td><%= stock.industry %></td>
+                            <td><%= stock.createdAt %></td>
+                            <td><%= stock.updatedAt %></td>
+                            <td>
+                                <a href="/admin/stock/<%= stock.symbol %>/update"><button type="button" class="btn btn-light">Update</button></a>
+                                <a href="/admin/stock/<%= stock.symbol %>/delete"><button type="button" class="btn btn-danger">Delete</button></a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="/js/admin/stocks.js"></script>
+        
+    </body>
+
+</html>
