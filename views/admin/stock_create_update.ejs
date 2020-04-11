@@ -7,11 +7,15 @@
 
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="/admin/stocks">Stocks</a></li>
                 <li class="breadcrumb-item active" aria-current="page"><% if (path === '/create') { %> Create <% } else { %> <%= stock.symbol %> <% } %></li>
             </ol>
         </nav>
+
+        <div style="text-align: right; padding-right: 20px;">
+            <a href="/admin/logout"><button type="button" class="btn btn-dark">Logout</button></a>
+        </div>
 
         <h1 style="padding: 10px 40px;"><% if (path === '/create') { %> Create <% } else { %> Update <% } %></h1>
 
