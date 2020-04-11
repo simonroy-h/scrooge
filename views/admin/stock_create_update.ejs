@@ -20,107 +20,107 @@
                 <form action="/admin/stock/create" method="post">
                     <div class="form-group">
                         <label for="symbol">Stock Symbol</label>
-                        <input type="symbol" name="symbol" class="form-control" id="symbol" required>
+                        <input type="symbol" name="symbol" class="form-control" id="symbol" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="name">Company Name</label>
-                        <input type="name" name="name" class="form-control" id="name" required>
+                        <input type="name" name="name" class="form-control" id="name" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="exchange">Stock Exchange</label>
-                        <input type="exchange" name="exchange" class="form-control" id="exchange" required>
+                        <input type="exchange" name="exchange" class="form-control" id="exchange" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="currency">Currency</label>
-                        <input type="currency" name="currency" class="form-control" id="currency" required>
+                        <input type="currency" name="currency" class="form-control" id="currency" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="sector">Sector</label>
-                        <input type="sector" name="sector" class="form-control" id="sector" required>
+                        <input type="sector" name="sector" class="form-control" id="sector" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="industry">Industry</label>
-                        <input type="industry" name="industry" class="form-control" id="industry" required>
+                        <input type="industry" name="industry" class="form-control" id="industry" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="commonSharesOutstanding">Common Shares Outstanding</label>
-                        <input type="commonSharesOutstanding" name="commonSharesOutstanding" class="form-control" id="commonSharesOutstanding" required>
+                        <input type="commonSharesOutstanding" name="commonSharesOutstanding" class="form-control" id="commonSharesOutstanding" data-validation="number" required>
                     </div>
                     <div class="form-group">
                         <label for="marketPricePerShare">Market Price Per Share</label>
-                        <input type="marketPricePerShare" name="marketPricePerShare" class="form-control" id="marketPricePerShare" required>
+                        <input type="marketPricePerShare" name="marketPricePerShare" class="form-control" id="marketPricePerShare" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="marketCapitalization">Market Capitalization</label>
-                        <input type="marketCapitalization" name="marketCapitalization" class="form-control" id="marketCapitalization" required>
+                        <input type="marketCapitalization" name="marketCapitalization" class="form-control" id="marketCapitalization" data-validation="number" required>
                     </div>
                     <div class="form-group">
                         <label for="beta">Beta</label>
-                        <input type="beta" name="beta" class="form-control" id="beta" required>
+                        <input type="beta" name="beta" class="form-control" id="beta" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="currentAnnualDividendPerShare">Current Annual Dividend Per Share (DPS)</label>
-                        <input type="currentAnnualDividendPerShare" name="currentAnnualDividendPerShare" class="form-control" id="currentAnnualDividendPerShare" required>
+                        <input type="currentAnnualDividendPerShare" name="currentAnnualDividendPerShare" class="form-control" id="currentAnnualDividendPerShare" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="currentAnnualEarningsPerShare">Current Annual Earnings Per Share (EPS)</label>
-                        <input type="currentAnnualEarningsPerShare" name="currentAnnualEarningsPerShare" class="form-control" id="currentAnnualEarningsPerShare" required>
+                        <input type="currentAnnualEarningsPerShare" name="currentAnnualEarningsPerShare" class="form-control" id="currentAnnualEarningsPerShare" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="projectedAnnualDividend">Projected Annual Dividend</label>
-                        <input type="projectedAnnualDividend" name="projectedAnnualDividend" class="form-control" id="projectedAnnualDividend" required>
+                        <input type="projectedAnnualDividend" name="projectedAnnualDividend" class="form-control" id="projectedAnnualDividend" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="dividendYield">10 Year Trailing (10YT) Dividend Yield</label>
-                        <input type="dividendYield" name="dividendYield" class="form-control" id="dividendYield" required>
+                        <input type="dividendYield" name="dividendYield" class="form-control" id="dividendYield" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="averageAnnualSharePriceGrowth">10YT Average Annual Share Price Growth</label>
-                        <input type="averageAnnualSharePriceGrowth" name="averageAnnualSharePriceGrowth" class="form-control" id="averageAnnualSharePriceGrowth" required>
+                        <input type="averageAnnualSharePriceGrowth" name="averageAnnualSharePriceGrowth" class="form-control" id="averageAnnualSharePriceGrowth" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="annualizedTotalReturn">10YT Annualized Total Return</label>
-                        <input type="annualizedTotalReturn" name="annualizedTotalReturn" class="form-control" id="annualizedTotalReturn" required>
+                        <input type="annualizedTotalReturn" name="annualizedTotalReturn" class="form-control" id="annualizedTotalReturn" data-validation="float" required>
                     </div>
                     <div class="form-group">
-                        <label for="consecutiveDividend"># of Consecutive Years of Dividend Growth</label>
-                        <input type="consecutiveDividend" name="consecutiveDividend" class="form-control" id="consecutiveDividend" required>
+                        <label for="consecutiveDividend">Number of Consecutive Years of Dividend Growth</label>
+                        <input type="consecutiveDividend" name="consecutiveDividend" class="form-control" id="consecutiveDividend" data-validation="number" required>
                     </div>
                     <div class="form-group">
                         <label for="averageAnnualDividendGrowth">5YT Average Annual Dividend Growth</label>
-                        <input type="averageAnnualDividendGrowth" name="averageAnnualDividendGrowth" class="form-control" id="averageAnnualDividendGrowth" required>
+                        <input type="averageAnnualDividendGrowth" name="averageAnnualDividendGrowth" class="form-control" id="averageAnnualDividendGrowth" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="averageAnnualEarningsGrowth">5YT Average Annual Earnings Growth</label>
-                        <input type="averageAnnualEarningsGrowth" name="averageAnnualEarningsGrowth" class="form-control" id="averageAnnualEarningsGrowth" required>
+                        <input type="averageAnnualEarningsGrowth" name="averageAnnualEarningsGrowth" class="form-control" id="averageAnnualEarningsGrowth" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="dividendPayoutRatio">5YT Dividend Payout Ratio</label>
-                        <input type="dividendPayoutRatio" name="dividendPayoutRatio" class="form-control" id="dividendPayoutRatio" required>
+                        <input type="dividendPayoutRatio" name="dividendPayoutRatio" class="form-control" id="dividendPayoutRatio" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="priceEarningsRatio">5YT Price-to-Earnings Ratio</label>
-                        <input type="priceEarningsRatio" name="priceEarningsRatio" class="form-control" id="priceEarningsRatio" required>
+                        <input type="priceEarningsRatio" name="priceEarningsRatio" class="form-control" id="priceEarningsRatio" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="netProfitMargin">5YT Net Profit Margin</label>
-                        <input type="netProfitMargin" name="netProfitMargin" class="form-control" id="netProfitMargin" required>
+                        <input type="netProfitMargin" name="netProfitMargin" class="form-control" id="netProfitMargin" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="returnOnEquityRatio">5YT Return-on-Equity Ratio</label>
-                        <input type="returnOnEquityRatio" name="returnOnEquityRatio" class="form-control" id="returnOnEquityRatio" required>
+                        <input type="returnOnEquityRatio" name="returnOnEquityRatio" class="form-control" id="returnOnEquityRatio" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="quickRatio">5YT Acid Test (Quick) Ratio</label>
-                        <input type="quickRatio" name="quickRatio" class="form-control" id="quickRatio" required>
+                        <input type="quickRatio" name="quickRatio" class="form-control" id="quickRatio" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="debtCoveringRatio">5YT Debt Covering Ratio</label>
-                        <input type="debtCoveringRatio" name="debtCoveringRatio" class="form-control" id="debtCoveringRatio" required>
+                        <input type="debtCoveringRatio" name="debtCoveringRatio" class="form-control" id="debtCoveringRatio" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="freeCashFlow">1YT Free Cash Flow</label>
-                        <input type="freeCashFlow" name="freeCashFlow" class="form-control" id="freeCashFlow" required>
+                        <input type="freeCashFlow" name="freeCashFlow" class="form-control" id="freeCashFlow" data-validation="letternumeric" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
@@ -128,112 +128,120 @@
                 <form action="/admin/stock/<%= stock.symbol %>/update" method="post">
                     <div class="form-group">
                         <label for="symbol">Stock Symbol</label>
-                        <input type="symbol" name="symbol" class="form-control" id="symbol" value="<%= stock.symbol %>" required>
+                        <input type="symbol" name="symbol" class="form-control" id="symbol" value="<%= stock.symbol %>" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="name">Company Name</label>
-                        <input type="name" name="name" class="form-control" id="name" value="<%= stock.name %>" required>
+                        <input type="name" name="name" class="form-control" id="name" value="<%= stock.name %>" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="exchange">Stock Exchange</label>
-                        <input type="exchange" name="exchange" class="form-control" id="exchange" value="<%= stock.exchange %>" required>
+                        <input type="exchange" name="exchange" class="form-control" id="exchange" value="<%= stock.exchange %>" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="currency">Currency</label>
-                        <input type="currency" name="currency" class="form-control" id="currency" value="<%= stock.currency %>" required>
+                        <input type="currency" name="currency" class="form-control" id="currency" value="<%= stock.currency %>" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="sector">Sector</label>
-                        <input type="sector" name="sector" class="form-control" id="sector" value="<%= stock.sector %>" required>
+                        <input type="sector" name="sector" class="form-control" id="sector" value="<%= stock.sector %>" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="industry">Industry</label>
-                        <input type="industry" name="industry" class="form-control" id="industry" value="<%= stock.industry %>" required>
+                        <input type="industry" name="industry" class="form-control" id="industry" value="<%= stock.industry %>" data-validation="letternumeric" required>
                     </div>
                     <div class="form-group">
                         <label for="commonSharesOutstanding">Common Shares Outstanding</label>
-                        <input type="commonSharesOutstanding" name="commonSharesOutstanding" class="form-control" id="commonSharesOutstanding" value="<%= stock.commonSharesOutstanding %>" required>
+                        <input type="commonSharesOutstanding" name="commonSharesOutstanding" class="form-control" id="commonSharesOutstanding" value="<%= stock.commonSharesOutstanding %>" data-validation="number" required>
                     </div>
                     <div class="form-group">
                         <label for="marketPricePerShare">Market Price Per Share</label>
-                        <input type="marketPricePerShare" name="marketPricePerShare" class="form-control" id="marketPricePerShare" value="<%= stock.marketPricePerShare %>" required>
+                        <input type="marketPricePerShare" name="marketPricePerShare" class="form-control" id="marketPricePerShare" value="<%= stock.marketPricePerShare %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="marketCapitalization">Market Capitalization</label>
-                        <input type="marketCapitalization" name="marketCapitalization" class="form-control" id="marketCapitalization" value="<%= stock.marketCapitalization %>" required>
+                        <input type="marketCapitalization" name="marketCapitalization" class="form-control" id="marketCapitalization" value="<%= stock.marketCapitalization %>" data-validation="number" required>
                     </div>
                     <div class="form-group">
                         <label for="beta">Beta</label>
-                        <input type="beta" name="beta" class="form-control" id="beta" value="<%= stock.beta %>" required>
+                        <input type="beta" name="beta" class="form-control" id="beta" value="<%= stock.beta %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="currentAnnualDividendPerShare">Current Annual Dividend Per Share (DPS)</label>
-                        <input type="currentAnnualDividendPerShare" name="currentAnnualDividendPerShare" class="form-control" id="currentAnnualDividendPerShare" value="<%= stock.currentAnnualDividendPerShare %>" required>
+                        <input type="currentAnnualDividendPerShare" name="currentAnnualDividendPerShare" class="form-control" id="currentAnnualDividendPerShare" value="<%= stock.currentAnnualDividendPerShare %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="currentAnnualEarningsPerShare">Current Annual Earnings Per Share (EPS)</label>
-                        <input type="currentAnnualEarningsPerShare" name="currentAnnualEarningsPerShare" class="form-control" id="currentAnnualEarningsPerShare" value="<%= stock.currentAnnualEarningsPerShare %>" required>
+                        <input type="currentAnnualEarningsPerShare" name="currentAnnualEarningsPerShare" class="form-control" id="currentAnnualEarningsPerShare" value="<%= stock.currentAnnualEarningsPerShare %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="projectedAnnualDividend">Projected Annual Dividend</label>
-                        <input type="projectedAnnualDividend" name="projectedAnnualDividend" class="form-control" id="projectedAnnualDividend" value="<%= stock.projectedAnnualDividend %>" required>
+                        <input type="projectedAnnualDividend" name="projectedAnnualDividend" class="form-control" id="projectedAnnualDividend" value="<%= stock.projectedAnnualDividend %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="dividendYield">10 Year Trailing (10YT) Dividend Yield</label>
-                        <input type="dividendYield" name="dividendYield" class="form-control" id="dividendYield" value="<%= stock.dividendYield %>" required>
+                        <input type="dividendYield" name="dividendYield" class="form-control" id="dividendYield" value="<%= stock.dividendYield %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="averageAnnualSharePriceGrowth">10YT Average Annual Share Price Growth</label>
-                        <input type="averageAnnualSharePriceGrowth" name="averageAnnualSharePriceGrowth" class="form-control" id="averageAnnualSharePriceGrowth" value="<%= stock.averageAnnualSharePriceGrowth %>" required>
+                        <input type="averageAnnualSharePriceGrowth" name="averageAnnualSharePriceGrowth" class="form-control" id="averageAnnualSharePriceGrowth" value="<%= stock.averageAnnualSharePriceGrowth %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="annualizedTotalReturn">10YT Annualized Total Return</label>
-                        <input type="annualizedTotalReturn" name="annualizedTotalReturn" class="form-control" id="annualizedTotalReturn" value="<%= stock.annualizedTotalReturn %>" required>
+                        <input type="annualizedTotalReturn" name="annualizedTotalReturn" class="form-control" id="annualizedTotalReturn" value="<%= stock.annualizedTotalReturn %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="consecutiveDividend">Number of Consecutive Years of Dividend Growth</label>
-                        <input type="consecutiveDividend" name="consecutiveDividend" class="form-control" id="consecutiveDividend" value="<%= stock.consecutiveDividend %>" required>
+                        <input type="consecutiveDividend" name="consecutiveDividend" class="form-control" id="consecutiveDividend" value="<%= stock.consecutiveDividend %>" data-validation="number" required>
                     </div>
                     <div class="form-group">
                         <label for="averageAnnualDividendGrowth">5YT Average Annual Dividend Growth</label>
-                        <input type="averageAnnualDividendGrowth" name="averageAnnualDividendGrowth" class="form-control" id="averageAnnualDividendGrowth" value="<%= stock.averageAnnualDividendGrowth %>" required>
+                        <input type="averageAnnualDividendGrowth" name="averageAnnualDividendGrowth" class="form-control" id="averageAnnualDividendGrowth" value="<%= stock.averageAnnualDividendGrowth %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="averageAnnualEarningsGrowth">5YT Average Annual Earnings Growth</label>
-                        <input type="averageAnnualEarningsGrowth" name="averageAnnualEarningsGrowth" class="form-control" id="averageAnnualEarningsGrowth" value="<%= stock.averageAnnualEarningsGrowth %>" required>
+                        <input type="averageAnnualEarningsGrowth" name="averageAnnualEarningsGrowth" class="form-control" id="averageAnnualEarningsGrowth" value="<%= stock.averageAnnualEarningsGrowth %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="dividendPayoutRatio">5YT Dividend Payout Ratio</label>
-                        <input type="dividendPayoutRatio" name="dividendPayoutRatio" class="form-control" id="dividendPayoutRatio" value="<%= stock.dividendPayoutRatio %>" required>
+                        <input type="dividendPayoutRatio" name="dividendPayoutRatio" class="form-control" id="dividendPayoutRatio" value="<%= stock.dividendPayoutRatio %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="priceEarningsRatio">5YT Price-to-Earnings Ratio</label>
-                        <input type="priceEarningsRatio" name="priceEarningsRatio" class="form-control" id="priceEarningsRatio" value="<%= stock.priceEarningsRatio %>" required>
+                        <input type="priceEarningsRatio" name="priceEarningsRatio" class="form-control" id="priceEarningsRatio" value="<%= stock.priceEarningsRatio %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="netProfitMargin">5YT Net Profit Margin</label>
-                        <input type="netProfitMargin" name="netProfitMargin" class="form-control" id="netProfitMargin" value="<%= stock.netProfitMargin %>" required>
+                        <input type="netProfitMargin" name="netProfitMargin" class="form-control" id="netProfitMargin" value="<%= stock.netProfitMargin %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="returnOnEquityRatio">5YT Return-on-Equity Ratio</label>
-                        <input type="returnOnEquityRatio" name="returnOnEquityRatio" class="form-control" id="returnOnEquityRatio" value="<%= stock.returnOnEquityRatio %>" required>
+                        <input type="returnOnEquityRatio" name="returnOnEquityRatio" class="form-control" id="returnOnEquityRatio" value="<%= stock.returnOnEquityRatio %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="quickRatio">5YT Acid Test (Quick) Ratio</label>
-                        <input type="quickRatio" name="quickRatio" class="form-control" id="quickRatio" value="<%= stock.quickRatio %>" required>
+                        <input type="quickRatio" name="quickRatio" class="form-control" id="quickRatio" value="<%= stock.quickRatio %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="debtCoveringRatio">5YT Debt Covering Ratio</label>
-                        <input type="debtCoveringRatio" name="debtCoveringRatio" class="form-control" id="debtCoveringRatio" value="<%= stock.debtCoveringRatio %>" required>
+                        <input type="debtCoveringRatio" name="debtCoveringRatio" class="form-control" id="debtCoveringRatio" value="<%= stock.debtCoveringRatio %>" data-validation="float" required>
                     </div>
                     <div class="form-group">
                         <label for="freeCashFlow">1YT Free Cash Flow</label>
-                        <input type="freeCashFlow" name="freeCashFlow" class="form-control" id="freeCashFlow" value="<%= stock.freeCashFlow %>" required>
+                        <input type="freeCashFlow" name="freeCashFlow" class="form-control" id="freeCashFlow" value="<%= stock.freeCashFlow %>" data-validation="letternumeric" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             <% } %>
         </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+        <script>
+            $.validate({
+                lang: 'en'
+            });
+        </script>
     </body>
 
 </html>

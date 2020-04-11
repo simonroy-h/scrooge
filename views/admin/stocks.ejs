@@ -14,6 +14,14 @@
 
         <h1 style="padding: 10px 40px;">Stocks</h1>
 
+        <% if (messages.info) { %>
+            <div class="container" style="text-align: center;">
+                <div class="alert alert-primary" role="alert">
+                    <%= messages.info %>
+                </div>
+            </div>    
+        <% } %>
+
         <div style="width: 93%; text-align: right;">
             <a href="/admin/stock/create"><button type="button" class="btn btn-success">Create</button></a>
         </div>

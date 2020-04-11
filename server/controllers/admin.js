@@ -16,14 +16,17 @@ exports.postStockCreate = (req, res, next) => {
     var body = req.body;
     body.updatedAt = Date.now();
     if (!body.symbol) {
-        res.status(400).send('Stock symbol is missing');
+        res.locals.message = req.flash('info', 'Stock symbol is missing! Stock creation was unsuccessful!');
+        res.status(400).redirect('/admin/stocks');
         return;
     }
     stockService.createStock(body, (err, stock) => {
         if (stock) {
+            res.locals.message = req.flash('info', 'Stock: ' + body.symbol + ' has successfully been created!')
             res.status(201).redirect('/admin/stocks');
         } else if (err) {
-            res.status(400).send(err);
+            res.locals.message = req.flash('info', 'Stock creation was unsuccessful!');
+            res.status(400).redirect('/admin/stocks');;
         }
     });
 };
@@ -34,12 +37,14 @@ exports.getStockUpdate = (req, res, next) => {
         symbol: params.symbol
     };
     if (!query) {
-        res.status(400).send('Bad request');
+        res.locals.message = req.flash('info', 'Bad request!');
+        res.status(400).redirect('/admin/stocks');
         return;
     }
     stockService.findStock(query, (err, stock) => {
         if (err) {
-            res.status(404).send(err);
+            res.locals.message = req.flash('info', 'There was an error retrieving the update page!');
+            res.status(404).redirect('/admin/stocks');
             return;
         }
         if (stock) {
@@ -50,7 +55,8 @@ exports.getStockUpdate = (req, res, next) => {
             return;
         }
         if (!stock) {
-            res.status(204).send('No data found');
+            res.locals.message = req.flash('info', 'No data found!');
+            res.status(204).redirect('/admin/stocks');
         }
     });
 };
@@ -59,14 +65,17 @@ exports.postStockUpdate = (req, res, next) => {
     var body = req.body;
     body.updatedAt = Date.now();
     if (!body.symbol) {
-        res.status(400).send('Symbol is missing');
+        res.locals.message = req.flash('info', 'Symbol is missing!');
+        res.status(400).redirect('/admin/stocks');
         return;
     }
     stockService.updateStock(body.symbol, body, (err, response) => {
         if (response) {
+            res.locals.message = req.flash('info', 'Stock: ' + body.symbol + ' has successfully been updated!')
             res.status(200).redirect('/admin/stocks');
         } else if (err) {
-            res.status(400).send(err);
+            res.locals.message = req.flash('info', 'Stock update was unsuccessful!');
+            res.status(400).redirect('/admin/stocks');;
         }
     });
 };
@@ -77,22 +86,24 @@ exports.getStockDelete = (req, res, next) => {
         symbol: params.symbol
     };
     if (!query) {
-        res.status(400).send('Bad request');
+        res.locals.message = req.flash('info', 'Bad request!');
+        res.status(400).redirect('/admin/stocks');
         return;
     }
     stockService.deleteStock(query, (err, response) => {
         if (err) {
-            res.status(400).send(error);
+            res.locals.message = req.flash('info', 'Stock deletion was unsuccessful!');
+            res.status(400).redirect('/admin/stocks');;
             return;
         }
         if (response) {
             if (response.n === 1 && response.ok === 1) {
+                res.locals.message = req.flash('info', 'Stock: ' + query.symbol + " has successfully been deleted!");
                 res.status(202).redirect('/admin/stocks');
             }
             if (response.n === 0 && response.ok === 1) {
-                res.status(204).send({
-                    message: 'No data found'
-                });
+                res.locals.message = req.flash('info', 'No data found!');
+                res.status(204).redirect('/admin/stocks');
             }
         }
     });

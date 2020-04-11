@@ -1,6 +1,9 @@
 const path = require('path');
 const express = require('express');
 const bodyparser = require('body-parser');
+const cookieparser = require('cookie-parser');
+const session = require('express-session');
+const flash = require('express-flash');
 
 // Models
 require('./server/models/stock');
@@ -21,6 +24,9 @@ app.set('views', 'views');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
+app.use(cookieparser());
+app.use(session({ secret: 'scrooge', resave: true, saveUninitialized: true, cookie: {} }));
+app.use(flash());
 
 app.use('/admin', adminRoutes);
 
