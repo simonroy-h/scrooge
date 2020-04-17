@@ -8,7 +8,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="/admin/stocks">Stocks</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><% if (path === '/create') { %> Create <% } else { %> <%= stock.symbol %> <% } %></li>
+                <li class="breadcrumb-item active" aria-current="page"><% if (path === '/create') { %> Create Stock <% } else { %> <%= stock.symbol %> <% } %></li>
             </ol>
         </nav>
 
@@ -16,7 +16,7 @@
             <a href="/admin/logout"><button type="button" class="btn btn-dark">Logout</button></a>
         </div>
 
-        <h1 style="padding: 10px 40px;"><% if (path === '/create') { %> Create <% } else { %> Update <% } %></h1>
+        <h1 style="padding: 10px 40px;"><% if (path === '/create') { %> Create Stock <% } else { %> Update Stock <% } %></h1>
 
         <div class="container" style="width: 100%;">
             <% if (path === '/create') { %>
