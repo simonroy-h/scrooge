@@ -10,6 +10,10 @@ require('./server/models/stock');
 
 // Routes
 const adminRoutes = require('./server/routes/admin');
+const clientRoutes = require('./server/routes/client');
+
+// Error
+const errorController = require('./server/controllers/error');
 
 // Configs
 const connection = require('./server/config/connection');
@@ -28,6 +32,10 @@ app.use(cookieparser());
 app.use(session({ secret: 'scrooge', resave: true, saveUninitialized: true, cookie: {} }));
 app.use(flash());
 
+app.use('/', clientRoutes);
 app.use('/admin', adminRoutes);
+
+app.use(errorController.get400);
+app.use(errorController.get404);
 
 app.listen(PORT);

@@ -2,15 +2,15 @@ const stockService = require('../service/stock');
 
 exports.getLogin = (req, res, next) => {
     res.render('admin/login');
-}
+};
 
 exports.postLogin = (req, res, next) => {
     
-}
+};
 
 exports.getLogout = (req, res, next) => {
     
-}
+};
 
 exports.getDashboard = (req, res, next) => {
     res.render('admin/dashboard', {

@@ -1,0 +1,38 @@
+.search {
+    width: 100%;
+}
+
+.searchTerm {
+    width: 80%;
+    border: 3px solid #007bff;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 5px 5px 5px;
+    outline: none;
+    color: snow;
+}
+
+.searchTerm:focus {
+    color: #007bff;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 0px;
+    background-color: snow;
+    text-align: center;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

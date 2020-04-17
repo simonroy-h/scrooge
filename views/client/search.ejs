@@ -1,0 +1,38 @@
+        <%- include('includes/header.ejs') %>
+        
+        <link rel="stylesheet" type="text/css" href="/css/search.css">
+
+    </head>
+
+    <body style="background-color: snow;">
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <% if (messages.info) { %>
+            <div class="container" style="text-align: center;">
+                <div class="alert alert-primary" role="alert">
+                    <%= messages.info %>
+                </div>
+            </div>    
+        <% } %>
+
+        <div class="wrap">
+            <h1>Scrooge</h1>
+            <h5 style="color: #007bff;">Intelligent Investing.</h5>
+            <br>
+            <div class="search">
+                <form action="/" method="post">
+                    <input class="searchTerm" type="text" name="symbol" placeholder="(e.g. AAPL) ...">
+                    <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <br>
+            <h5><i>(If the stock is not available, assume it's a bad investment...)</i></h5>
+        </div>
+        
+    </body>
+
+</html>

@@ -1,0 +1,127 @@
+        <%- include('includes/header.ejs') %>
+
+        <link rel="stylesheet" type="text/css" href="/css/stock.css">
+
+    </head>
+
+    <body style="background-color: snow;">
+
+        <div class="head">
+            <h1 style="padding: 40px 0px 0px 40px;"><%= stock.symbol %></h1>
+            <div style="float: right; padding-right: 40px;">Last Updated: <%= stock.updatedAt %></div>
+        </div>
+        <h3 style="color: #007bff; padding: 0px 0px 40px 40px;"><%= stock.name %> (<%= stock.exchange %>)</h3>
+        <hr>
+
+        <div class="generalInformation" style="padding: 20px 0px 20px 40px;">
+            <table>
+                <tr>
+                    <th>Sector</th>
+                    <th>Industry</th>
+                    <th>Common Shares Outstanding</th>
+                    <th>Market Price Per Share</th>
+                    <th>Market Capitalization</th>
+                    <th>Beta</th>
+                </tr>
+                <tr>
+                    <td><%= stock.sector %></td>
+                    <td><%= stock.industry %></td>
+                    <td><%= stock.commonSharesOutstanding %> M</td>
+                    <td><%= stock.marketPricePerShare %> <%= stock.currency %></td>
+                    <td><%= stock.marketCapitalization %> M <%= stock.currency %></td>
+                    <td><%= stock.beta %></td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <div class="dividendInvestingChecklist" style="padding: 20px 0px 20px 40px;">
+            <table>
+                <tr>
+                    <th style="color: #007bff;">Metric</th>
+                    <th style="color: #007bff;">Target</th>
+                    <th style="color: #007bff;">Actual</th>
+                    <td></td>
+                    <th style="color: #007bff;">Metric</th>
+                    <th style="color: #007bff;">Target</th>
+                    <th style="color: #007bff;">Actual</th>
+                </tr>
+                <tr>
+                    <th>Current Annual Dividend Per Share (DPS)</th>
+                    <td>< EPS</td>
+                    <td>$<%= stock.currentAnnualDividendPerShare %></td>
+                    <td></td>
+                    <th>Current Annual Earnings Per Share (EPS)</th>
+                    <td>> DPS</td>
+                    <td>$<%= stock.currentAnnualEarningsPerShare %></td>
+                </tr>
+                <tr>
+                    <th>Projected Annual Dividend</th>
+                    <td>> DPS</td>
+                    <td>$<%= stock.projectedAnnualDividend %></td>
+                    <td></td>
+                    <th>10YT Dividend Yield (DY)</th>
+                    <td>3.075 - 6.15 %</td>
+                    <td><%= stock.dividendYield %> %</td>
+                </tr>
+                <tr>
+                    <th>10YT Average Annual Share Price Growth</th>
+                    <td>> DY</td>
+                    <td><%= stock.averageAnnualSharePriceGrowth %> %</td>
+                    <td></td>
+                    <th>10YT Annualized Total Return</th>
+                    <td>> 10 %</td>
+                    <td><%= stock.annualizedTotalReturn %> %</td>
+                </tr>
+                <tr>
+                    <th>Number of Consecutive Years of Dividend Growth</th>
+                    <td>>= 10 Years</td>
+                    <td><%= stock.consecutiveDividend %> Year(s)</td>
+                    <td></td>
+                    <th>5YT Average Annual Dividend Growth</th>
+                    <td>5 - 10 %</td>
+                    <td><%= stock.averageAnnualDividendGrowth %> %</td>
+                </tr>
+                <tr>
+                    <th>5YT Average Annual Earnings Growth</th>
+                    <td>5 - 10 %</td>
+                    <td><%= stock.averageAnnualEarningsGrowth %> %</td>
+                    <td></td>
+                    <th>5YT Dividend Payout Ratio</th>
+                    <td>50 - 75 %</td>
+                    <td><%= stock.dividendPayoutRatio %> %</td>
+                </tr>
+                <tr>
+                    <th>5YT Price-to-Earnings Ratio</th>
+                    <td>< Sector Average</td>
+                    <td><%= stock.priceEarningsRatio %></td>
+                    <td></td>
+                    <th>5YT Net Profit Margin</th>
+                    <td>> 5 %</td>
+                    <td><%= stock.netProfitMargin %> %</td>
+                </tr>
+                <tr>
+                    <th>5YT Return-on-Equity Ratio</th>
+                    <td>> 10 %</td>
+                    <td><%= stock.returnOnEquityRatio %> %</td>
+                    <td></td>
+                    <th>5YT Quick Ratio</th>
+                    <td>1:1 - 2:1</td>
+                    <td><%= stock.quickRatio %></td>
+                </tr>
+                <tr>
+                    <th>5YT Debt Covering Ratio</th>
+                    <td>>= 2:1</td>
+                    <td><%= stock.debtCoveringRatio %></td>
+                    <td></td>
+                    <th>1YT Free Cash Flow</th>
+                    <td>3X > Dividends Paid</td>
+                    <td><%= stock.freeCashFlow %></td>
+                </tr>
+            </table>
+        </div>
+        
+    </body>
+
+</html>
