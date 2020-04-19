@@ -1,6 +1,7 @@
 # Scrooge
 
 # Setup
+- YOU MUST HAVE MONGODB INSTALLED!!!
 - npm install
 - npm run dev
 - http://localhost:3000/
