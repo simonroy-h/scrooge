@@ -4,18 +4,14 @@ exports.getLogin = (req, res, next) => {
     res.render('admin/login');
 };
 
-exports.postLogin = (req, res, next) => {
-    
-};
-
 exports.getLogout = (req, res, next) => {
-    
+    req.logout();
+    res.locals.message = req.flash('info', 'You have successfully logged out!');
+    res.redirect('/admin/')
 };
 
 exports.getDashboard = (req, res, next) => {
-    res.render('admin/dashboard', {
-        path: '/'
-    });
+    res.render('admin/dashboard');
 };
 
 exports.getStockCreate = (req, res, next) => {
