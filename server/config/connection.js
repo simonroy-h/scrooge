@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URL = process.env.URL || 'mongodb://127.0.0.1/scrooge';
+const URL = process.env.MONGODB_URI || 'mongodb://127.0.0.1/scrooge';
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);

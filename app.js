@@ -15,6 +15,7 @@ const errorController = require('./server/controllers/error');
 // Configs
 const connection = require('./server/config/connection');
 require('./server/config/passport')(passport);
+require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
