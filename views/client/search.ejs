@@ -4,33 +4,32 @@
 
     </head>
 
-    <body style="background-color: snow;">
+    <body>
 
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="logo"><img src="img/scrooge-logo-white.png" alt="Logo"></div>
+        <div class="logo-text">SCROOGE</div>
+
+        <div class="logo-body"><img src="img/scrooge-logo-white@2x.png" alt="Logo"></div>
+        <div class="logo-body-text">SCROOGE</div>
 
         <% if (messages.info) { %>
-            <div class="container" style="text-align: center;">
+            <div class="alert-container" style="text-align: center;">
                 <div class="alert alert-primary" role="alert">
                     <%= messages.info %>
                 </div>
             </div>    
         <% } %>
 
-        <div class="wrap">
-            <h1>Scrooge</h1>
-            <h5 style="color: #007bff;">Intelligent Investing.</h5>
-            <br>
-            <div class="search">
+        <div class="search">
+            <h1 class="search-header">Search for listed stocks</h1>
+            <h5 class="search-body-1">This is a database of <i>high performing</i> and <i>secure</i> dividend stocks</h5>
+            <h5 class="search-body-2">If a stock is unavailable, assume it's a bad investment</h5>
+            <div class="search-bar">
                 <form action="/" method="post">
-                    <input class="searchTerm" type="text" name="symbol" placeholder="Search for stock symbol (e.g. AAPL)...">
+                    <input class="searchTerm" type="text" name="symbol" style="padding-left: 20px;" placeholder="AAPL, MSFT, AMD...">
                     <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            <br>
-            <h5><i>(If the stock is not available, assume it's a bad investment...)</i></h5>
         </div>
         
     </body>
