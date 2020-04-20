@@ -115,7 +115,7 @@ body {
     width: 600px;
     height: 61px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #808080;
+    border: 0px solid #808080;
     border-radius: 5px;
     opacity: 1;
 }
