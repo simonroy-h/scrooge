@@ -53,12 +53,30 @@
                             <td><%= stock.updatedAt %></td>
                             <td>
                                 <a href="/admin/stock/<%= stock.symbol %>/update"><button type="button" class="btn btn-light">Update</button></a>
-                                <a href="/admin/stock/<%= stock.symbol %>/delete"><button type="button" class="btn btn-danger">Delete</button></a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete" data-symbol="<%= stock.symbol %>">Delete</button>
                             </td>
                         </tr>
                     <% }) %>
                 </tbody>
             </table>
+
+            <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Delete Stock</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="body-text">Are you sure you want to delete this stock: </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-danger btn-ok" style="color: white;">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <script src="/js/admin/stocks.js"></script>
