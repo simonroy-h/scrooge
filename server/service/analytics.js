@@ -18,7 +18,8 @@ exports.findAnalytics = () => {
                 _id: { url: '$url' },
                 numberOfRequests: { $sum: 1 },
             }
-        }
+        },
+        { $sort: { numberOfRequests: 1 } }
     ]);
     let getRequestsPerDay = Analytics.aggregate([
         {
