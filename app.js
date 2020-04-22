@@ -7,6 +7,7 @@ const passport = require('passport');
 const flash = require('express-flash');
 
 // Models
+require('./server/models/analytics');
 require('./server/models/stock');
 
 // Error

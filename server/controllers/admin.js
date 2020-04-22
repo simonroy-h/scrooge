@@ -1,3 +1,4 @@
+const analyticsService = require('../service/analytics');
 const stockService = require('../service/stock');
 
 exports.getLogin = (req, res, next) => {
@@ -11,7 +12,7 @@ exports.getLogout = (req, res, next) => {
 };
 
 exports.getDashboard = (req, res, next) => {
-    res.render('admin/dashboard');
+    analyticsService.findAnalytics().then(analytics => res.render('admin/dashboard', {analytics: analytics}));
 };
 
 exports.getStockCreate = (req, res, next) => {

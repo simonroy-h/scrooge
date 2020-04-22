@@ -1,5 +1,7 @@
         <%- include('includes/header.ejs') %>
 
+        <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+
     </head>
 
     <body style="background-color: snow;">
@@ -13,16 +15,6 @@
         <div style="text-align: right; padding-right: 20px;">
             <a href="/admin/logout"><button type="button" class="btn btn-dark">Logout</button></a>
         </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
 
         <div class="container" style="margin: auto; width:100%; padding: 25px;">
             <div class="row">
@@ -60,7 +52,89 @@
                 </div>
             </div>
         </div>
-        
+
+        <div class="container" id="analytics-dashboard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total requests</h5>
+                            <div class="card-text">
+                                <h3><%= analytics.totalRequests %></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Most visited IPs</h5>
+                            <div class="card-text" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <% analytics.statsPerIP.forEach(ip => { %>
+                                        <li class="list-group-item">
+                                            <%= ip._id %> (<%= ip.numberOfRequests %> requests)
+                                        </li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Busiest days of the week</h5>
+                            <div class="card-text" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <% analytics.requestsPerDay.forEach(day => { %>
+                                        <li class="list-group-item">
+                                            <%= day._id %> (<%= day.numberOfRequests %> requests)
+                                        </li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Busiest hours of day</h5>
+                            <div class="card-text" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <% analytics.requestsPerHour.forEach(hour => { %>
+                                        <li class="list-group-item">
+                                            <%= hour._id %>:00 (<%= hour.numberOfRequests %> requests)
+                                        </li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Most visited routes</h5>
+                            <div class="card-text" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <% analytics.statsPerRoute.forEach(route => { %>
+                                        <li class="list-group-item">
+                                            <%= route._id.url %> (<%= route.numberOfRequests %> requests)
+                                        </li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </body>
 

@@ -15,7 +15,7 @@ exports.findStock = (query, callback) => {
 
 exports.findStocks = (callback) => {
     Stock.find({}, callback);
-}
+};
 
 exports.updateStock = (symbol, data, callback) => {
     Stock.findOneAndUpdate({
