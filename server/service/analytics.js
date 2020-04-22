@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 var Analytics = mongoose.model('Analytics');
 
 exports.findAnalytics = () => {
-    let getTotalRequests = Analytics.count();
+    let getTotalRequests = Analytics.countDocuments();
     let getStatsPerIP = Analytics.aggregate([
         {
             $group: {
