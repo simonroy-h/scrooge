@@ -55,28 +55,12 @@
 
         <div class="container" id="analytics-dashboard">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Total requests</h5>
                             <div class="card-text">
                                 <h3><%= analytics.totalRequests %></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Most visited IPs</h5>
-                            <div class="card-text" style="width: 18rem;">
-                                <ul class="list-group list-group-flush">
-                                    <% analytics.statsPerIP.forEach(ip => { %>
-                                        <li class="list-group-item">
-                                            <%= ip._id %> (<%= ip.numberOfRequests %> requests)
-                                        </li>
-                                    <% }) %>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -126,6 +110,22 @@
                                     <% analytics.statsPerRoute.forEach(route => { %>
                                         <li class="list-group-item">
                                             <%= route._id.url %> (<%= route.numberOfRequests %> requests)
+                                        </li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Most visited IPs</h5>
+                            <div class="card-text" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <% analytics.statsPerIP.forEach(ip => { %>
+                                        <li class="list-group-item">
+                                            <%= ip._id %> (<%= ip.numberOfRequests %> requests)
                                         </li>
                                     <% }) %>
                                 </ul>
