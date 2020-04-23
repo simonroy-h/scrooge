@@ -55,12 +55,28 @@
 
         <div class="container" id="analytics-dashboard">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Total requests</h5>
                             <div class="card-text">
                                 <h3><%= analytics.totalRequests %></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Busiest months of the year</h5>
+                            <div class="card-text" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <% analytics.requestsPerMonth.forEach(month => { %>
+                                        <li class="list-group-item">
+                                            <%= month._id %> (<%= month.numberOfRequests %> requests)
+                                        </li>
+                                    <% }) %>
+                                </ul>
                             </div>
                         </div>
                     </div>

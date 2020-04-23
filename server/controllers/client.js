@@ -7,6 +7,7 @@ exports.getSearch = (req, res, next) => {
     let requestTime = Date.now();
     Analytics.create({
         url: req.path,
+        month: moment(requestTime).format("MMMM"),
         day: moment(requestTime).format("dddd"),
         hour: moment(requestTime).hour(),
         ip: req.connection.remoteAddress
@@ -22,6 +23,7 @@ exports.getStock = (req, res, next) => {
     let requestTime = Date.now();
     Analytics.create({
         url: req.path,
+        month: moment(requestTime).format("MMMM"),
         day: moment(requestTime).format("dddd"),
         hour: moment(requestTime).hour(),
         ip: req.connection.remoteAddress

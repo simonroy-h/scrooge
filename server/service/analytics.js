@@ -21,6 +21,15 @@ exports.findAnalytics = () => {
         },
         { $sort: { numberOfRequests: 1 } }
     ]);
+    let getRequestsPerMonth = Analytics.aggregate([
+        {
+            $group: {
+                _id: '$month',
+                numberOfRequests: { $sum: 1 }
+            }
+        },
+        { $sort: { numberOfRequests: 1 } }
+    ]);
     let getRequestsPerDay = Analytics.aggregate([
         {
             $group: {
@@ -42,6 +51,7 @@ exports.findAnalytics = () => {
     return Promise.all([
         getStatsPerRoute,
         getStatsPerIP,
+        getRequestsPerMonth,
         getRequestsPerDay,
         getRequestsPerHour,
         getTotalRequests
@@ -49,9 +59,10 @@ exports.findAnalytics = () => {
         return {
             statsPerRoute: results[0],
             statsPerIP: results[1],
-            requestsPerDay: results[2],
-            requestsPerHour: results[3],
-            totalRequests: results[4],
+            requestsPerMonth: results[2],
+            requestsPerDay: results[3],
+            requestsPerHour: results[4],
+            totalRequests: results[5],
         };
     });
 };
