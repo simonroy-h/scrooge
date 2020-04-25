@@ -13,7 +13,7 @@ body {
 .alert-container {
     position: fixed;
     top: 540px;
-    left: 504px;
+    left: 454px;
     width: 613px;
     height: 65px;
     font-size: 18px;
@@ -77,7 +77,7 @@ body {
 .search-header {
     position: fixed;
     top: 280px;
-    left: 504px;
+    left: 454px;
     width: 691px;
     height: 85px;
     text-align: left;
@@ -92,7 +92,7 @@ body {
 .search-body-1 {
     position: fixed;
     top: 350px;
-    left: 504px;
+    left: 454px;
     width: 627px;
     height: 57px;
     text-align: left;
@@ -105,7 +105,7 @@ body {
 .search-body-2 {
     position: fixed;
     top: 500px;
-    left: 504px;
+    left: 454px;
     width: 627px;
     height: 57px;
     text-align: left;
@@ -118,7 +118,7 @@ body {
 .searchTerm {
     position: fixed;
     top: 405px;
-    left: 504px;
+    left: 454px;
     width: 400px;
     height: 61px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -131,7 +131,7 @@ body {
 .searchButton {
     position: fixed;
     top: 405px;
-    left: 923px;
+    left: 873px;
     width: 193px;
     height: 61px;
     background: #3382DE 0% 0% no-repeat padding-box;
