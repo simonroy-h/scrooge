@@ -9,4 +9,6 @@ router.post('/', clientController.postSearch);
 
 router.get('/stock/:symbol', clientController.getStock);
 
+router.post('/contact', clientController.postContact);
+
 module.exports = router;

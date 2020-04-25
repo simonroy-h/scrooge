@@ -141,3 +141,10 @@ body {
     color: #FFFFFF;
     font-size: large;
 }
+
+.footer {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 100%;
+}
