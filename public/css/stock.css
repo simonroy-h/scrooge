@@ -25,13 +25,13 @@ body {
 .generalInformationTable {
     white-space: nowrap;
     overflow: hidden;
-    padding: 0px 165px 20px 0px;
+    padding: 0px 55px 20px 0px;
 }
 
 .dividendInvestingChecklistTable {
     white-space: nowrap;
     overflow: hidden;
-    padding: 0px 290px 20px 0px;
+    padding: 0px 110px 20px 0px;
 }
 
 td {

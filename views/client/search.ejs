@@ -12,14 +12,6 @@
         <div class="logo-body"><img src="img/scrooge-logo-white@2x.png" alt="Logo"></div>
         <div class="logo-body-text">SCROOGE</div>
 
-        <% if (messages.info) { %>
-            <div class="alert-container" style="text-align: center;">
-                <div class="alert alert-primary" role="alert">
-                    <%= messages.info %>
-                </div>
-            </div>    
-        <% } %>
-
         <div class="search">
             <h1 class="search-header">Search for listed dividend stocks</h1>
             <h5 class="search-body-1">This is a database of <i>high performing</i> and <i>secure</i> dividend stocks &nbsp;<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="The performance represented is historical; past performance is not a reliable indicator of future results and investors may not recover the full amount invested. Use this tool at your own risk to supplement your dividend investing research."></i></h5>
@@ -31,6 +23,14 @@
                 </form>
             </div>
         </div>
+
+        <% if (messages.info) { %>
+            <div class="alert-container" style="text-align: center;">
+                <div class="alert alert-primary" role="alert">
+                    <%= messages.info %>
+                </div>
+            </div>    
+        <% } %>
 
         <script src="/js/client/search.js"></script>
         
