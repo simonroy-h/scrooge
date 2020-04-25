@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Nunito');
+
 body {
     position: relative;
     top: 0px;
@@ -6,11 +7,12 @@ body {
     height: 1000px;
     background: transparent linear-gradient(119deg, #2879D8 0%, #2379DB 100%) 0% 0% no-repeat padding-box;
     opacity: 1;
+    font-family: Nunito;
 }
 
 .alert-container {
     position: fixed;
-    top: 550px;
+    top: 525px;
     left: 1436px;
     width: 400px;
     height: 61px;
@@ -42,7 +44,7 @@ body {
     width: 256px;
     height: 56px;
     text-align: left;
-    font: Bold 50px/58px Roboto;
+    font: Bold 50px/58px Nunito;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
@@ -65,7 +67,7 @@ body {
     width: 2203px;
     height: 481px;
     text-align: left;
-    font: Bold 431px/495px Roboto;
+    font: Bold 431px/495px Nunito;
     letter-spacing: 0px;
     color: #79B7FF;
     opacity: 0.06;
@@ -79,6 +81,8 @@ body {
     height: 85px;
     text-align: left;
     font: Roman 69px/85px;
+    font-weight: 800;
+    font-size: 45px;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
@@ -86,7 +90,7 @@ body {
 
 .search-body-1 {
     position: fixed;
-    top: 460px;
+    top: 470px;
     left: 604px;
     width: 627px;
     height: 57px;
@@ -98,7 +102,7 @@ body {
 
 .search-body-2 {
     position: fixed;
-    top: 500px;
+    top: 620px;
     left: 604px;
     width: 627px;
     height: 57px;
@@ -110,7 +114,7 @@ body {
 
 .searchTerm {
     position: fixed;
-    top: 550px;
+    top: 525px;
     left: 604px;
     width: 600px;
     height: 61px;
@@ -122,7 +126,7 @@ body {
 
 .searchButton {
     position: fixed;
-    top: 550px;
+    top: 525px;
     left: 1223px;
     width: 193px;
     height: 61px;

@@ -22,15 +22,17 @@
 
         <div class="search">
             <h1 class="search-header">Search for listed dividend stocks</h1>
-            <h5 class="search-body-1">This is a database of <i>high performing</i> and <i>secure</i> dividend stocks</h5>
-            <h5 class="search-body-2">If a stock is unavailable, assume it's a bad investment</h5>
+            <h5 class="search-body-1">This is a database of <i>high performing</i> and <i>secure</i> dividend stocks &nbsp;<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="The performance represented is historical; past performance is not a reliable indicator of future results and investors may not recover the full amount invested. Use this tool at your own risk to supplement your dividend investing research."></i></h5>
+            <h5 class="search-body-2">If a stock is unavailable, it's coming soon...</h5>
             <div class="search-bar">
                 <form action="/" method="post">
                     <input class="searchTerm" type="text" name="symbol" style="padding-left: 20px;" placeholder="AAPL, MSFT, AMD...">
-                    <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
+                    <button class="searchButton" type="submit">Search</button>
                 </form>
             </div>
         </div>
+
+        <script src="/js/client/search.js"></script>
         
     </body>
 
