@@ -5,19 +5,20 @@
 
     </head>
 
-    <body style="background-color: snow;">
+    <body>
 
         <%- include('includes/sidenav.ejs') %>
 
         <div id="main">
-            <h1 style="padding: 60px 0px 0px 60px; color: #137AE9; font-weight: 800; font-size: 50px;"><%= stock.name %></h1>
-            <h3 style="padding: 10px 0px 60px 60px; color: #094D96; font-weight: 800;"><%= stock.exchange %>
-                <span style="color: #9B9B9B;">
+
+            <h1 style="padding: 60px 0px 0px 60px; font-weight: 800; font-size: 50px;"><%= stock.name %></h1>
+            <h3 style="padding: 10px 0px 60px 60px; font-weight: 800;"><%= stock.exchange %>
+                <span>
                     - <%= stock.symbol %>
                 </span>
             </h3>
 
-            <h5 style="padding: 10px 0px 20px 60px; color: #094D96; font-weight: 800;">General Overview</h5>
+            <h5 style="padding: 10px 0px 20px 60px; font-weight: 800;">General Overview</h5>
     
             <div class="generalInformation" style="padding: 40px 40px 20px 40px;">
                 <table>
@@ -42,15 +43,15 @@
 
             <div style="float: right; padding: 20px 60px 0px 0px;"><i>* Common Shares Outstanding, Market Price Per Share & Market Capitalization are updated on a monthly basis.</i></div>
     
-            <h5 style="padding: 80px 0px 20px 60px; color: #094D96; font-weight: 800;">Dividend Investing Checklist</h5>
+            <h5 style="padding: 80px 0px 20px 60px; font-weight: 800;">Dividend Investing Checklist</h5>
     
             <div class="dividendInvestingChecklist" style="padding: 45px 0px 20px 45px;">
                 <table>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="color: #007bff; font-size: larger; font-weight: 800;">Metric</th>
-                        <th class="dividendInvestingChecklistTable" style="color: #007bff; font-size: larger; font-weight: 800;">Target</th>
-                        <th class="dividendInvestingChecklistTable" style="color: #007bff; font-size: larger; font-weight: 800;">Actual</th>
-                        <th class="dividendInvestingChecklistTable" style="color: #007bff; font-size: larger; font-weight: 800;">Meets Target?</th>
+                        <th class="dividendInvestingChecklistTable dividendHeaders" style="font-size: larger; font-weight: 800;">Metric</th>
+                        <th class="dividendInvestingChecklistTable dividendHeaders" style="font-size: larger; font-weight: 800;">Target</th>
+                        <th class="dividendInvestingChecklistTable dividendHeaders" style="font-size: larger; font-weight: 800;">Actual</th>
+                        <th class="dividendInvestingChecklistTable dividendHeaders" style="font-size: larger; font-weight: 800;">Meets Target?</th>
                     </tr>
                     <tr>
                         <th class="dividendInvestingChecklistTable" style="font-weight: 800">Current Annual Dividend Per Share (DPS)</th>
@@ -58,7 +59,7 @@
                         <td class="dividendInvestingChecklistTable">$<%= stock.currentAnnualDividendPerShare %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.currentAnnualDividendPerShare < stock.currentAnnualEarningsPerShare) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -70,7 +71,7 @@
                         <td class="dividendInvestingChecklistTable">$<%= stock.currentAnnualEarningsPerShare %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.currentAnnualEarningsPerShare > stock.currentAnnualDividendPerShare) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -82,7 +83,7 @@
                         <td class="dividendInvestingChecklistTable">$<%= stock.projectedAnnualDividend %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.projectedAnnualDividend > stock.currentAnnualDividendPerShare) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -94,7 +95,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.dividendYield %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.dividendYield >= 3.075 && stock.dividendYield <= 6.15) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -106,7 +107,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.averageAnnualSharePriceGrowth %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.averageAnnualSharePriceGrowth > stock.dividendYield) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -118,7 +119,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.annualizedTotalReturn %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.annualizedTotalReturn > 10) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -130,7 +131,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.consecutiveDividend %> Year(s)</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.consecutiveDividend >= 10) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -142,7 +143,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.averageAnnualDividendGrowth %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.averageAnnualDividendGrowth >= 5 && stock.averageAnnualDividendGrowth <= 10) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -154,7 +155,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.averageAnnualEarningsGrowth %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.averageAnnualEarningsGrowth >= 5 && stock.averageAnnualEarningsGrowth <= 10) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -166,7 +167,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.dividendPayoutRatio %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.dividendPayoutRatio >= 50 && stock.dividendPayoutRatio <= 75) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -186,7 +187,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.netProfitMargin %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.netProfitMargin > 5) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -198,7 +199,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.returnOnEquityRatio %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.returnOnEquityRatio > 10) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -210,7 +211,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.quickRatio %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.quickRatio >= 1 && stock.quickRatio <= 2) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -222,7 +223,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.debtCoveringRatio %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.debtCoveringRatio >= 2) { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -234,7 +235,7 @@
                         <td class="dividendInvestingChecklistTable"><%= stock.freeCashFlow %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
                             <% if (stock.freeCashFlow === "Yes") { %>
-                                <i class="fa fa-check" style="color: green;"></i>
+                                <i class="fa fa-check" style="color: greenyellow;"></i>
                             <%} else { %>
                                 <i class="fa fa-times" style="color: red;"></i>
                             <% } %>
@@ -245,6 +246,8 @@
 
             <div style="float: right; padding: 20px 60px 40px 0px;"><b style="font-weight: 800">Last Updated: </b><%= stock.updatedAt %></div>
         </div>
+        
+        <script src="/js/client/darkmode.js"></script>
         
     </body>
 

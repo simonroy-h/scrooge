@@ -1,23 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito');
 
+:root {
+    --side-nav: #137AE9;
+    --bg: #FFFFFF;
+    --toggle: #000000;
+    --h1: #137AE9;
+    --h3: #094D96;
+    --h5: #094D96;
+    --divH: #007bff;
+    --text: #000000;
+    --box-br: #F4F4F4;
+    --box-bg: #FAFAFA;
+}
+
+.darkmode {
+    --side-nav: #0E3471;
+    --bg: #030E22;
+    --toggle: #FFFFFF;
+    --h1: #FFFFFF;
+    --h3: #90C5FD;
+    --h5: #3B9BFC;
+    --divH: #3B9BFC;
+    --text: #FFFFFF;
+    --box-br: #03122B;
+    --box-bg: #031026;
+}
+
+.sidenav {
+    height: 100%;
+    width: 294px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--side-nav);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav .logo {
+    padding: 10px 15px 15px 110px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #FFFFFFFA;
+    font-weight: 800;
+    background: url(../img/scrooge-logo-white.png) no-repeat 10% 20%;
+    user-select: none;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 90px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #FFFFFFFA;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #FFFFFFFA;
+}
+
+#main {
+    background: var(--bg);
+    margin-left: 294px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
 body {
+    background: var(--bg);
     font-family: Nunito;
     max-width: 100%;
     overflow-x: hidden;
 }
 
+h1 {
+    color: var(--h1);
+}
+
+h3 {
+    color: var(--h3);
+}
+
+span {
+    color: #9B9B9B;;
+}
+
+h5 {
+    color: var(--h5);
+}
+
+.dividendHeaders {
+    color: var(--divH);
+}
+
 .generalInformation {
     border-radius: 15px;
-    border: 3px solid #F4F4F4;
-    background: #FAFAFA;
+    border: 3px solid var(--box-br);
+    background: var(--box-bg);
     margin-left: 60px;
     margin-right: 60px;
 }
 
 .dividendInvestingChecklist {
     border-radius: 15px;
-    border: 3px solid #F4F4F4;
-    background: #FAFAFA;
+    border: 3px solid var(--box-br);
+    background: var(--box-bg);
     margin-left: 60px;
     margin-right: 60px;
 }
@@ -36,10 +132,16 @@ body {
 
 td {
     font-weight: lighter;
+    color: var(--text);
 }
 
 th {
     text-align: left;
+    color: var(--text);
+}
+
+div {
+    color: var(--text);
 }
 
 #performance {
