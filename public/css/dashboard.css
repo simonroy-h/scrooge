@@ -1,3 +1,22 @@
 .row {
     padding: 10px;
 }
+
+.badge {
+    position: relative;
+}
+
+.badge[data-badge]:after {
+    content: attr(data-badge);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2em;
+    background: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+}

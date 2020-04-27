@@ -13,7 +13,10 @@ exports.getLogout = (req, res, next) => {
 
 exports.getDashboard = (req, res, next) => {
     analyticsService.findAnalytics().then(analytics => {
-        res.render('admin/dashboard', {analytics: analytics})
+        res.render('admin/dashboard', {
+            analytics: analytics,
+            notifications: 2
+        });
     });
 };
 
