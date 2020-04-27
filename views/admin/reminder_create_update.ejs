@@ -1,0 +1,86 @@
+        <%- include('includes/header.ejs') %>
+
+    </head>
+
+    <body style="background-color: snow;">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="/admin/reminders">Reminders</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><% if (path === '/create') { %> Create Reminder <% } else { %> <%= reminder.symbol %> <% } %></li>
+            </ol>
+        </nav>
+
+        <div style="text-align: right; padding-right: 20px;">
+            <a href="/admin/logout"><button type="button" class="btn btn-dark">Logout</button></a>
+        </div>
+
+        <h1 style="padding: 10px 40px;"><% if (path === '/create') { %> Create Reminder <% } else { %> Update Reminder <% } %></h1>
+
+        <br>
+        <br>
+        <br>
+        
+        <div class="container" style="width: 100%;">
+            <% if (path === '/create') { %>
+                <form action="/admin/reminder/create" method="post">
+                    <div class="form-group">
+                        <label for="symbol">Stock Symbol #</label>
+                        <input type="symbol" name="symbol" class="form-control" id="symbol" data-validation="letternumeric" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reminder">Reminder</label>
+                        <input type="reminder" name="reminder" class="form-control" id="reminder" data-validation="letternumeric" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <input type="notes" name="notes" class="form-control" id="notes" data-validation="letternumeric">
+                    </div>
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input type="url" name="url" class="form-control" id="url" data-validation="letternumeric" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" name="dueDate" class="form-control" id="dueDate" data-validation="date" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            <% } else { %>
+                <form action="/admin/reminder/<%= reminder.symbol %>/update" method="post">
+                    <div class="form-group">
+                        <label for="symbol">Stock Symbol #</label>
+                        <input type="symbol" name="symbol" class="form-control" id="symbol" value="<%= reminder.symbol %>" data-validation="letternumeric" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="reminder">Reminder</label>
+                        <input type="reminder" name="reminder" class="form-control" id="reminder" value="<%= reminder.reminder %>" data-validation="letternumeric" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <input type="notes" name="notes" class="form-control" id="notes" value="<%= reminder.notes %>" data-validation="letternumeric">
+                    </div>
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input type="url" name="url" class="form-control" id="url" value="<%= reminder.url %>" data-validation="letternumeric" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" name="dueDate" class="form-control" id="dueDate" value="<%= reminder.dueDate %>" data-validation="letternumeric" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            <% } %>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+        <script>
+            $.validate({
+                lang: 'en'
+            });
+        </script>
+    </body>
+
+</html>

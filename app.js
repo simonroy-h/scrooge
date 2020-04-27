@@ -8,6 +8,7 @@ const flash = require('express-flash');
 
 // Models
 require('./server/models/analytics');
+require('./server/models/reminder');
 require('./server/models/stock');
 
 // Error

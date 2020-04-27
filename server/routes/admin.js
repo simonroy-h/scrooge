@@ -17,13 +17,17 @@ module.exports = (app, passport) => {
 
     app.get('/admin/stock/create', isLoggedIn, adminController.getStockCreate);
     app.post('/admin/stock/create', isLoggedIn, adminController.postStockCreate);
-
     app.get('/admin/stock/:symbol/update', isLoggedIn, adminController.getStockUpdate);
     app.post('/admin/stock/:symbol/update', isLoggedIn, adminController.postStockUpdate);
-
     app.get('/admin/stock/:symbol/delete', isLoggedIn, adminController.getStockDelete);
-
     app.get('/admin/stocks', isLoggedIn, adminController.getStocks);
+
+    app.get('/admin/reminder/create', isLoggedIn, adminController.getReminderCreate);
+    app.post('/admin/reminder/create', isLoggedIn, adminController.postReminderCreate);
+    app.get('/admin/reminder/:symbol/update', isLoggedIn, adminController.getReminderUpdate);
+    app.post('/admin/reminder/:symbol/update', isLoggedIn, adminController.postReminderUpdate);
+    app.get('/admin/reminder/:symbol/delete', isLoggedIn, adminController.getReminderDelete);
+    app.get('/admin/reminders', isLoggedIn, adminController.getReminders);
 
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated()) return next();
