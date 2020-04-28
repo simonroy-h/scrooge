@@ -1,5 +1,7 @@
 # Scrooge
 
+# Live @ scrooge.tools
+
 # Setup
 - YOU MUST HAVE NODEJS, NPM & MONGODB INSTALLED!
 - "npm install"
