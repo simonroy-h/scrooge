@@ -133,22 +133,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Most visited IPs</h5>
-                            <div class="card-text" style="width: 18rem;">
-                                <ul class="list-group list-group-flush">
-                                    <% analytics.statsPerIP.forEach(ip => { %>
-                                        <li class="list-group-item">
-                                            <%= ip._id %> (<%= ip.numberOfRequests %> requests)
-                                        </li>
-                                    <% }) %>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         

@@ -3,15 +3,6 @@ var Analytics = mongoose.model('Analytics');
 
 exports.findAnalytics = () => {
     let getTotalRequests = Analytics.countDocuments();
-    let getStatsPerIP = Analytics.aggregate([
-        {
-            $group: {
-                _id: '$ip',
-                numberOfRequests: { $sum: 1 },
-            }
-        },
-        { $sort: { numberOfRequests: 1 } }
-    ]);
     let getStatsPerRoute = Analytics.aggregate([
         {
             $group: {
@@ -50,7 +41,6 @@ exports.findAnalytics = () => {
     ]);
     return Promise.all([
         getStatsPerRoute,
-        getStatsPerIP,
         getRequestsPerMonth,
         getRequestsPerDay,
         getRequestsPerHour,
@@ -58,11 +48,10 @@ exports.findAnalytics = () => {
     ]).then(results => {
         return {
             statsPerRoute: results[0],
-            statsPerIP: results[1],
-            requestsPerMonth: results[2],
-            requestsPerDay: results[3],
-            requestsPerHour: results[4],
-            totalRequests: results[5],
+            requestsPerMonth: results[1],
+            requestsPerDay: results[2],
+            requestsPerHour: results[3],
+            totalRequests: results[4],
         };
     });
 };
