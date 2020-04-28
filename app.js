@@ -4,6 +4,7 @@ const bodyparser = require('body-parser');
 const cookieparser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
+const favicon = require('serve-favicon');
 const flash = require('express-flash');
 
 // Models
@@ -34,6 +35,7 @@ app.use(session({ secret: 'scrooge', resave: true, saveUninitialized: true, cook
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(favicon(path.join(__dirname, 'public/img', 'scrooge-logo-black.png')));
 
 // Routes
 require('./server/routes/admin')(app, passport);
