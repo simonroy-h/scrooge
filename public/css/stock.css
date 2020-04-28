@@ -26,6 +26,16 @@
     --box-bg: #031026;
 }
 
+.dark-mode-toggle {
+    border: none;
+    background: none;
+    color: var(--toggle);
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: x-large;
+}
+
 .sidenav {
     height: 100%;
     width: 294px;
