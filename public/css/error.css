@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito');
+
+:root {
+    --bg: transparent linear-gradient(119deg, #2879D8 0%, #2379DB 100%) 0% 0% no-repeat padding-box;
+    --toggle: #000000;
+    --logo-body: #79B7FF;
+    --error: #0D437E;
+    --btn-alrt: #3382DE 0% 0% no-repeat padding-box;
+}
+
+.darkmode {
+    --bg: transparent linear-gradient(119deg, #030E22 0%, #030E22 100%) 0% 0% no-repeat padding-box;
+    --toggle: #FFFFFF;
+    --logo-body: #79B7FF;
+    --error: #90C5FD;
+    --btn-alrt: #030E22 0% 0% no-repeat padding-box;
+}
+
+body {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 5000px;
+    background: var(--bg);
+    opacity: 1;
+    font-family: Nunito;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.dark-mode-toggle {
+    border: none;
+    background: none;
+    color: var(--toggle);
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    font-size: x-large;
+}
+
+h1 {
+    color: var(--error);
+    font-size: 90px;
+    font-weight: 800;
+}
+
+h5 {
+    color: var(--error);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+p {
+    color: #FFFFFF;
+    font-weight: 800;
+}
+
+.logo-body img {
+    position: fixed;
+    top: 200px;
+    left: -130px;
+    width: 568px;
+    height: 466px;
+    background: transparent 0% 0% no-repeat padding-box;
+    opacity: 0.06;
+    -webkit-user-drag: none;
+}
+
+.logo-body-text {
+    position: fixed;
+    top: 160px;
+    left: 475px;
+    width: 2203px;
+    height: 481px;
+    text-align: left;
+    font: Bold 431px/495px Nunito;
+    letter-spacing: 0px;
+    color: var(--logo-body);
+    opacity: 0.06;
+    user-select: none;
+}
