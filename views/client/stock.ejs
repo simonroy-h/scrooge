@@ -1,6 +1,5 @@
         <%- include('includes/header.ejs') %>
 
-        <link rel="stylesheet" type="text/css" href="/css/sidenav.css">
         <link rel="stylesheet" type="text/css" href="/css/stock.css">
 
     </head>
@@ -13,24 +12,24 @@
 
             <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="toggle dark mode"><i class="fa fa-moon-o"></i></button>
 
-            <h1 style="padding: 60px 0px 0px 60px; font-weight: 800; font-size: 50px;"><%= stock.name %></h1>
-            <h3 style="padding: 10px 0px 60px 60px; font-weight: 800;"><%= stock.exchange %>
+            <h1><%= stock.name %></h1>
+            <h3><%= stock.exchange %>
                 <span>
                     - <%= stock.symbol %>
                 </span>
             </h3>
 
-            <h5 style="padding: 10px 0px 20px 60px; font-weight: 800;">General Overview</h5>
+            <h5>General Overview</h5>
     
-            <div class="generalInformation" style="padding: 40px 20px 20px 40px; display: table;">
+            <div class="generalInformation">
                 <table>
                     <tr>
-                        <th class="generalInformationTable" style="font-weight: 800;">Sector</th>
-                        <th class="generalInformationTable" style="font-weight: 800">Industry</th>
-                        <th class="generalInformationTable" style="font-weight: 800">Common Shares Outstanding *</th>
-                        <th class="generalInformationTable" style="font-weight: 800">Market Price Per Share *</th>
-                        <th class="generalInformationTable" style="font-weight: 800">Market Capitalization *</th>
-                        <th class="generalInformationTable" style="font-weight: 800">Beta</th>
+                        <th class="generalInformationTable generalHeaders">Sector</th>
+                        <th class="generalInformationTable generalHeaders">Industry</th>
+                        <th class="generalInformationTable generalHeaders">Common Shares Outstanding *</th>
+                        <th class="generalInformationTable generalHeaders">Market Price Per Share *</th>
+                        <th class="generalInformationTable generalHeaders">Market Capitalization *</th>
+                        <th class="generalInformationTable generalHeaders">Beta</th>
                     </tr>
                     <tr>
                         <td class="generalInformationTable"><%= stock.sector %></td>
@@ -43,20 +42,20 @@
                 </table>
             </div>
 
-            <div style="padding: 20px 0px 0px 60px;"><i>* Common Shares Outstanding, Market Price Per Share & Market Capitalization are updated on a monthly basis.</i></div>
+            <div class="asterix"><i>* Common Shares Outstanding, Market Price Per Share & Market Capitalization are updated on a monthly basis.</i></div>
     
-            <h5 style="padding: 80px 0px 20px 60px; font-weight: 800;">Dividend Investing Checklist</h5>
+            <h5>Dividend Investing Checklist</h5>
     
-            <div class="dividendInvestingChecklist" style="padding: 45px 0px 20px 45px; display: table;">
+            <div class="dividendInvestingChecklist">
                 <table>
                     <tr>
-                        <th class="dividendInvestingChecklistTable dividendHeaders" style="font-size: larger; font-weight: 800;">Metric</th>
-                        <th class="dividendInvestingChecklistTable dividendHeaders" style="font-size: larger; font-weight: 800;">Target</th>
-                        <th class="dividendInvestingChecklistTable dividendHeaders" style="font-size: larger; font-weight: 800;">Actual</th>
-                        <th class="dividendInvestingChecklistTable dividendHeaders" style="font-size: larger; font-weight: 800;">Meets Target?</th>
+                        <th class="dividendInvestingChecklistTable dividendHeaders">Metric</th>
+                        <th class="dividendInvestingChecklistTable dividendHeaders">Target</th>
+                        <th class="dividendInvestingChecklistTable dividendHeaders">Actual</th>
+                        <th class="dividendInvestingChecklistTable dividendHeaders">Meets Target?</th>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">Current Annual Dividend Per Share (DPS)</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">Current Annual Dividend Per Share (DPS)</th>
                         <td class="dividendInvestingChecklistTable">< EPS</td>
                         <td class="dividendInvestingChecklistTable">$<%= stock.currentAnnualDividendPerShare %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -68,7 +67,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">Current Annual Earnings Per Share (EPS)</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">Current Annual Earnings Per Share (EPS)</th>
                         <td class="dividendInvestingChecklistTable">> DPS</td>
                         <td class="dividendInvestingChecklistTable">$<%= stock.currentAnnualEarningsPerShare %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -80,7 +79,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">Projected Annual Dividend</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">Projected Annual Dividend</th>
                         <td class="dividendInvestingChecklistTable">> DPS</td>
                         <td class="dividendInvestingChecklistTable">$<%= stock.projectedAnnualDividend %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -92,7 +91,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">10YT Dividend Yield (DY)</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">10YT Dividend Yield (DY)</th>
                         <td class="dividendInvestingChecklistTable">3.075 - 6.15 %</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.dividendYield %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -104,7 +103,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">10YT Average Annual Share Price Growth</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">10YT Average Annual Share Price Growth</th>
                         <td class="dividendInvestingChecklistTable">> DY</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.averageAnnualSharePriceGrowth %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -116,7 +115,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">10YT Annualized Total Return</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">10YT Annualized Total Return</th>
                         <td class="dividendInvestingChecklistTable">> 10 %</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.annualizedTotalReturn %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -128,7 +127,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">Number of Consecutive Years of Dividend Growth</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">Number of Consecutive Years of Dividend Growth</th>
                         <td class="dividendInvestingChecklistTable">>= 10 Years</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.consecutiveDividend %> Year(s)</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -140,7 +139,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">5YT Average Annual Dividend Growth</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">5YT Average Annual Dividend Growth</th>
                         <td class="dividendInvestingChecklistTable">5 - 10 %</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.averageAnnualDividendGrowth %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -152,7 +151,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">5YT Average Annual Earnings Growth</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">5YT Average Annual Earnings Growth</th>
                         <td class="dividendInvestingChecklistTable">5 - 10 %</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.averageAnnualEarningsGrowth %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -164,7 +163,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">5YT Dividend Payout Ratio</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">5YT Dividend Payout Ratio</th>
                         <td class="dividendInvestingChecklistTable">50 - 75 %</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.dividendPayoutRatio %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -176,7 +175,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">5YT Price-to-Earnings Ratio</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">5YT Price-to-Earnings Ratio</th>
                         <td class="dividendInvestingChecklistTable">< Sector Average</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.priceEarningsRatio %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -184,7 +183,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">5YT Net Profit Margin</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">5YT Net Profit Margin</th>
                         <td class="dividendInvestingChecklistTable">> 5 %</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.netProfitMargin %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -196,7 +195,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">5YT Return-on-Equity Ratio</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">5YT Return-on-Equity Ratio</th>
                         <td class="dividendInvestingChecklistTable">> 10 %</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.returnOnEquityRatio %> %</td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -208,7 +207,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">5YT Quick Ratio</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">5YT Quick Ratio</th>
                         <td class="dividendInvestingChecklistTable">1:1 - 2:1</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.quickRatio %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -220,7 +219,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">5YT Debt Covering Ratio</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">5YT Debt Covering Ratio</th>
                         <td class="dividendInvestingChecklistTable">>= 2:1</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.debtCoveringRatio %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -232,7 +231,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="dividendInvestingChecklistTable" style="font-weight: 800">1YT Free Cash Flow</th>
+                        <th class="dividendInvestingChecklistTable dividendInvestingHeaders">1YT Free Cash Flow</th>
                         <td class="dividendInvestingChecklistTable">3X > Dividends Paid</td>
                         <td class="dividendInvestingChecklistTable"><%= stock.freeCashFlow %></td>
                         <td class="dividendInvestingChecklistTable" id="performance">
@@ -246,7 +245,7 @@
                 </table>
             </div>
 
-            <div style="padding: 20px 0px 40px 60px;"><b style="font-weight: 800">Last Updated: </b><%= stock.updatedAt %></div>
+            <div class="updated"><b>Last Updated: </b><%= stock.updatedAt %></div>
         </div>
         
         <script src="/js/client/darkmode.js"></script>

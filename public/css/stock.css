@@ -38,11 +38,9 @@
 
 .sidenav {
     height: 100%;
-    width: 294px;
+    width: 19.5%;
     position: fixed;
     z-index: 1;
-    top: 0;
-    left: 0;
     background-color: var(--side-nav);
     overflow-x: hidden;
     padding-top: 20px;
@@ -52,7 +50,7 @@
     padding: 10px 15px 15px 110px;
     text-decoration: none;
     font-size: 32px;
-    color: #FFFFFFFA;
+    color: #FFFFFF;
     font-weight: 800;
     background: url(../img/scrooge-logo-white.png) no-repeat 10% 20%;
     user-select: none;
@@ -62,27 +60,14 @@
     padding: 8px 8px 8px 90px;
     text-decoration: none;
     font-size: 24px;
-    color: #FFFFFFFA;
+    color: #FFFFFF;
     display: block;
     transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #FFFFFFFA;
 }
 
 #main {
     background: var(--bg);
     margin-left: 294px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-    .sidenav a {
-        font-size: 18px;
-    }
 }
 
 body {
@@ -94,10 +79,15 @@ body {
 
 h1 {
     color: var(--h1);
+    padding: 60px 0px 0px 60px;
+    font-weight: 800;
+    font-size: 50px;
 }
 
 h3 {
     color: var(--h3);
+    padding: 10px 0px 0px 60px;
+    font-weight: 800;
 }
 
 span {
@@ -106,10 +96,18 @@ span {
 
 h5 {
     color: var(--h5);
+    padding: 80px 0px 20px 60px;
+    font-weight: 800;
+}
+
+.generalHeaders, .dividendInvestingHeaders {
+    font-weight: 800;
 }
 
 .dividendHeaders {
     color: var(--divH);
+    font-size: larger;
+    font-weight: 800;
 }
 
 .generalInformation {
@@ -118,6 +116,8 @@ h5 {
     background: var(--box-bg);
     margin-left: 60px;
     margin-right: 60px;
+    padding: 40px 20px 20px 40px;
+    display: table;
 }
 
 .dividendInvestingChecklist {
@@ -126,6 +126,8 @@ h5 {
     background: var(--box-bg);
     margin-left: 60px;
     margin-right: 60px;
+    padding: 45px 0px 20px 45px;
+    display: table;
 }
 
 .generalInformationTable {
@@ -138,6 +140,18 @@ h5 {
     white-space: nowrap;
     overflow: hidden;
     padding: 0px 110px 20px 0px;
+}
+
+.asterix {
+    padding: 20px 0px 0px 60px;
+}
+
+.updated {
+    padding: 20px 0px 40px 60px;
+}
+
+.updated b {
+    font-weight: 800;
 }
 
 td {

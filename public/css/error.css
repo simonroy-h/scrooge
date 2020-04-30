@@ -38,6 +38,10 @@ body {
     font-size: x-large;
 }
 
+.container {
+    text-align: center;
+}
+
 h1 {
     color: var(--error);
     font-size: 90px;
