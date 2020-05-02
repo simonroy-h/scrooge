@@ -3,14 +3,12 @@
 :root {
     --bg: transparent linear-gradient(119deg, #2879D8 0%, #2379DB 100%) 0% 0% no-repeat padding-box;
     --toggle: #000000;
-    --logo-body: #79B7FF;
     --btn-alrt: #3382DE 0% 0% no-repeat padding-box;
 }
 
 .darkmode {
     --bg: transparent linear-gradient(119deg, #030E22 0%, #030E22 100%) 0% 0% no-repeat padding-box;
     --toggle: #FFFFFF;
-    --logo-body: #79B7FF;
     --btn-alrt: #030E22 0% 0% no-repeat padding-box;
 }
 
@@ -20,7 +18,6 @@ body {
     left: 0px;
     height: 5000px;
     background: var(--bg);
-    opacity: 1;
     font-family: Nunito;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -28,124 +25,82 @@ body {
 
 .logo {
     position: fixed;
-    top: 30px;
-    left: 35px;
-    width: 79px;
-    height: 66px;
-    background: transparent 0% 0% no-repeat padding-box;
-    opacity: 1;
+    top: 40px;
+    left: 40px;
+}
+
+.logo img {
+    width: 50px;
 }
 
 .logo-text {
     position: fixed;
-    top: 35px;
-    left: 134px;
-    width: 256px;
-    height: 56px;
+    top: 33px;
+    left: 110px;
     text-align: left;
     font: Bold 50px/58px Nunito;
     font-size: 32px;
-    letter-spacing: 0px;
     color: #FFFFFF;
-    opacity: 1;
     user-select: none;
 }
 
 .dark-mode-toggle {
+    position: fixed;
+    top: 45px;
+    right: 45px;
     border: none;
     background: none;
     color: var(--toggle);
+    font-size: large;
+}
+
+.footer {
     position: fixed;
-    top: 40px;
-    right: 40px;
-    font-size: x-large;
+    bottom: 15px;
+    right: 15px;
+    width: 100%;
 }
 
 .logo-body img {
     position: fixed;
-    top: 200px;
-    left: -130px;
-    width: 568px;
-    height: 466px;
-    background: transparent 0% 0% no-repeat padding-box;
     opacity: 0.06;
     -webkit-user-drag: none;
 }
 
 .logo-body-text {
     position: fixed;
-    top: 160px;
-    left: 475px;
-    width: 2203px;
-    height: 481px;
     text-align: left;
-    font: Bold 431px/495px Nunito;
-    letter-spacing: 0px;
-    color: var(--logo-body);
+    font: Bold 500px/560px Nunito;
+    color: #79B7FF;
     opacity: 0.06;
     user-select: none;
 }
 
 .search-header {
     position: fixed;
-    top: 280px;
-    left: 30%;
-    width: 691px;
-    height: 85px;
     text-align: left;
-    font: Roman 69px/85px;
     font-weight: 800;
-    font-size: 40px;
-    letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
 }
 
-.search-body-1 {
+.search-body-1, .search-body-2 {
     position: fixed;
-    top: 350px;
-    left: 30%;
-    width: 627px;
-    height: 57px;
     text-align: left;
-    letter-spacing: 0px;
-    font-size: 18px;
-    color: #FFFFFF;
-    opacity: 0.8;
-}
-
-.search-body-2 {
-    position: fixed;
-    top: 500px;
-    left: 30%;
-    width: 627px;
-    height: 57px;
-    text-align: left;
-    letter-spacing: 0px;
-    font-size: 18px;
     color: #FFFFFF;
     opacity: 0.8;
 }
 
 .searchTerm {
     position: fixed;
-    top: 405px;
-    left: 30%;
-    width: 400px;
-    height: 61px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 0px solid;
-    font-size: 16px;
     border-radius: 5px;
     opacity: 1;
 }
 
 .searchButton {
     position: fixed;
-    top: 405px;
-    left: 57%;
-    width: 193px;
-    height: 61px;
     background: var(--btn-alrt);
     border: 3px solid #FFFFFF;
     border-radius: 5px;
@@ -156,10 +111,6 @@ body {
 
 .alert-container {
     position: fixed;
-    top: 540px;
-    left: 30%;
-    width: 613px;
-    height: 65px;
     font-size: 18px;
 }
 
@@ -171,9 +122,312 @@ body {
     opacity: 0.5;
 }
 
-.footer {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    width: 100%;
+
+@media only screen and (max-width: 400px) {
+    .logo-text {
+        display: none;
+    }
+    .search-body-1, .search-body-2 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 300px) {
+    .logo-body {
+        display: none;
+    }
+    .logo-body-text {
+        display: none;
+    }
+    .alert-container {
+        top: 20%;
+        left: 15%;
+        width: 70%;
+        height: 65px;
+    }
+    .search-header {
+        top: 34%;
+        left: 15%;
+        font-size: 32px;
+        width: 300px;
+    }
+    .search-body-1, .search-body-2 {
+        display: none;
+    }
+    .searchTerm {
+        top: 49%;
+        left: 15%;
+        width: 70%;
+        height: 50px;
+    }
+    .searchButton {
+        top: 61%;
+        right: 15%;
+        width: 100px;
+        height: 50px;
+    }
+    
+}
+
+@media only screen and (orientation: landscape) {
+    .alert-container {
+        top: 30%;
+        left: 5%;
+        width: fit-content;
+        height: 65px;
+    }
+    .search-header {
+        top: 47%;
+        left: 5%;
+        font-size: 30px;
+        width: fit-content;
+    }
+    .searchTerm {
+        top: 62%;
+        left: 5%;
+        width: 50%;
+        height: 50px;
+    }
+    .searchButton {
+        top: 62%;
+        left: 57%;
+        width: 100px;
+        height: 50px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .logo-body {
+        display: none;
+    }
+    .logo-body-text {
+        display: none;
+    }
+    .search-body-1, .search-body-2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 850px) and (orientation: landscape) {
+    .logo-body {
+        display: none;
+    }
+    .logo-body-text {
+        display: none;
+    }
+    .search-body-1, .search-body-2 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    .logo-body {
+        display: block;
+    }
+    .logo-body img {
+        top: 25%;
+        left: -130px;
+        width: 568px;
+    }
+    .logo-body-text {
+        display: block;
+        top: 20%;
+        left: 475px;
+        width: 2203px;
+    }
+    .search-header {
+        top: 300px;
+        left: 100px;
+        width: fit-content;
+        font-size: 40px;
+    }
+    .search-body-1 {
+        display: block;
+        top: 375px;
+        left: 100px;
+        font-size: 18px;
+    }
+    .search-body-2 {
+        display: block;
+        top: 500px;
+        left: 100px;
+        font-size: 18px;
+    }
+    .searchTerm {
+        top: 425px;
+        left: 100px;
+        width: 50%;
+        height: 50px;
+    }
+    .searchButton {
+        top: 425px;
+        left: 500px;
+        width: 100px;
+        height: 50px;
+    }
+    .alert-container {
+        top: 540px;
+        left: 100px;
+        width: fit-content;
+        height: 65px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .logo-body {
+        display: block;
+    }
+    .logo-body img {
+        top: 20%;
+        left: -130px;
+        width: 568px;
+    }
+    .logo-body-text {
+        display: block;
+        top: 15%;
+        left: 475px;
+        width: 2203px;
+    }
+    .search-header {
+        top: 200px;
+        left: 220px;
+        width: fit-content;
+        font-size: 40px;
+    }
+    .search-body-1 {
+        display: block;
+        top: 275px;
+        left: 220px;
+        font-size: 18px;
+    }
+    .search-body-2 {
+        display: block;
+        top: 410px;
+        left: 220px;
+        font-size: 18px;
+    }
+    .searchTerm {
+        top: 330px;
+        left: 220px;
+        width: 40%;
+        height: 50px;
+    }
+    .searchButton {
+        top: 330px;
+        left: 650px;
+        width: 100px;
+        height: 50px;
+    }
+    .alert-container {
+        top: 450px;
+        left: 220px;
+        width: fit-content;
+        height: 65px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (orientation: portrait) {
+    .logo-body {
+        display: block;
+    }
+    .logo-body img {
+        top: 20%;
+        left: -130px;
+        width: 568px;
+    }
+    .logo-body-text {
+        display: block;
+        top: 17%;
+        left: 475px;
+        width: 2203px;
+    }
+    .search-header {
+        top: 320px;
+        left: 220px;
+        width: fit-content;
+        font-size: 40px;
+    }
+    .search-body-1 {
+        display: block;
+        top: 395px;
+        left: 220px;
+        font-size: 18px;
+    }
+    .search-body-2 {
+        display: block;
+        top: 530px;
+        left: 220px;
+        font-size: 18px;
+    }
+    .searchTerm {
+        top: 450px;
+        left: 220px;
+        width: 40%;
+        height: 50px;
+    }
+    .searchButton {
+        top: 450px;
+        left: 650px;
+        width: 100px;
+        height: 50px;
+    }
+    .alert-container {
+        top: 580px;
+        left: 220px;
+        width: fit-content;
+        height: 65px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .logo-body {
+        display: block;
+    }
+    .logo-body img {
+        top: 25%;
+        left: -130px;
+        width: 568px;
+    }
+    .logo-body-text {
+        display: block;
+        top: 20%;
+        left: 475px;
+        width: 2203px;
+    }
+    .search-header {
+        top: 35%;
+        left: 31%;
+        width: fit-content;
+        font-size: 40px;
+    }
+    .search-body-1 {
+        display: block;
+        top: 43%;
+        left: 31%;
+        font-size: 18px;
+    }
+    .search-body-2 {
+        display: block;
+        top: 59%;
+        left: 31%;
+        font-size: 18px;
+    }
+    .searchTerm {
+        top: 49%;
+        left: 31%;
+        width: 30%;
+        height: 50px;
+    }
+    .searchButton {
+        top: 49%;
+        left: 62%;
+        width: 100px;
+        height: 50px;
+    }
+    .alert-container {
+        top: 64%;
+        left: 31%;
+        width: fit-content;
+        height: 65px;
+    }
 }
