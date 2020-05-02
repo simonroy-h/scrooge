@@ -16,7 +16,7 @@ exports.getSearch = (req, res, next) => {
 };
 
 exports.postSearch = (req, res, next) => {
-    res.redirect('/stock/' + req.body.symbol.toUpperCase());
+    res.redirect('/stock/' + req.body.symbol.toUpperCase().trim());
 };
 
 exports.getStock = (req, res, next) => {
