@@ -22,7 +22,6 @@ body {
     left: 0px;
     height: 5000px;
     background: var(--bg);
-    opacity: 1;
     font-family: Nunito;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -39,6 +38,7 @@ body {
 }
 
 .container {
+    position: fixed;
     text-align: center;
 }
 
@@ -61,10 +61,6 @@ p {
 
 .logo-body img {
     position: fixed;
-    top: 200px;
-    left: -130px;
-    width: 568px;
-    height: 466px;
     background: transparent 0% 0% no-repeat padding-box;
     opacity: 0.06;
     -webkit-user-drag: none;
@@ -72,14 +68,127 @@ p {
 
 .logo-body-text {
     position: fixed;
-    top: 160px;
-    left: 475px;
-    width: 2203px;
-    height: 481px;
     text-align: left;
     font: Bold 431px/495px Nunito;
-    letter-spacing: 0px;
     color: var(--logo-body);
     opacity: 0.06;
     user-select: none;
+}
+
+@media only screen and (min-width: 300px) {
+    .logo-body {
+        display: none;
+    }
+    .logo-body-text {
+        display: none;
+    }
+    .container {    
+        top: 25%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .logo-body {
+        display: none;
+    }
+    .logo-body-text {
+        display: none;
+    }
+    .container {    
+        top: 15%;
+        margin: 0 10%;
+    }
+}
+
+@media only screen and (max-width: 850px) and (orientation: landscape) {
+    .logo-body {
+        display: none;
+    }
+    .logo-body-text {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    .logo-body {
+        display: block;
+    }
+    .logo-body img {
+        top: 25%;
+        left: -130px;
+        width: 568px;
+    }
+    .logo-body-text {
+        display: block;
+        top: 20%;
+        left: 475px;
+        width: 2203px;
+    }
+    .container {    
+        top: 35%;
+        left: -7%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .logo-body {
+        display: block;
+    }
+    .logo-body img {
+        top: 20%;
+        left: -130px;
+        width: 568px;
+    }
+    .logo-body-text {
+        display: block;
+        top: 15%;
+        left: 475px;
+        width: 2203px;
+    }
+    .container {    
+        top: 30%;
+        left: -7%;
+    }
+}
+
+@media only screen and (min-width: 992px) and (orientation: portrait) {
+    .logo-body {
+        display: block;
+    }
+    .logo-body img {
+        top: 20%;
+        left: -130px;
+        width: 568px;
+    }
+    .logo-body-text {
+        display: block;
+        top: 17%;
+        left: 475px;
+        width: 2203px;
+    }
+    .container {    
+        top: 27%;
+        left: -7%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .logo-body {
+        display: block;
+    }
+    .logo-body img {
+        top: 25%;
+        left: -130px;
+        width: 568px;
+    }
+    .logo-body-text {
+        display: block;
+        top: 20%;
+        left: 475px;
+        width: 2203px;
+    }
+    .container {    
+        top: 35%;
+        left: 0%;
+    }
 }
