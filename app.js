@@ -35,7 +35,7 @@ app.use(session({ secret: 'scrooge', resave: true, saveUninitialized: true, cook
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use(favicon(path.join(__dirname, 'public/img', 'scrooge-logo-black.png')));
+app.use(favicon(path.join(__dirname, 'public/img', 'favicon.png')));
 
 // Routes
 require('./server/routes/admin')(app, passport);
