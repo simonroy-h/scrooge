@@ -10,7 +10,8 @@ exports.getSearch = (req, res, next) => {
         url: req.path,
         month: moment(requestTime).format("MMMM"),
         day: moment(requestTime).format("dddd"),
-        hour: moment(requestTime).hour()
+        hour: moment(requestTime).hour(),
+        ip: (req.headers['x-forwarded-for'] || req.connection.remoteAddress || '').split(',')[0].trim()
     });
     res.render('client/search');
 };
@@ -25,7 +26,8 @@ exports.getStock = (req, res, next) => {
         url: req.path,
         month: moment(requestTime).format("MMMM"),
         day: moment(requestTime).format("dddd"),
-        hour: moment(requestTime).hour()
+        hour: moment(requestTime).hour(),
+        ip: (req.headers['x-forwarded-for'] || req.connection.remoteAddress || '').split(',')[0].trim()
     });
     var params = req.params || {};
     var query = {

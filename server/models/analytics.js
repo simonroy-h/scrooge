@@ -4,7 +4,8 @@ var schema = new mongoose.Schema({
     url: String,
     month: String,
     day: String,
-    hour: Number
+    hour: Number,
+    ip: String
 });
 
 var Analytics = new mongoose.model('Analytics', schema, 'Analytics');
