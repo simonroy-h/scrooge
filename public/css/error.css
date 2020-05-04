@@ -69,7 +69,7 @@ p {
 .logo-body-text {
     position: fixed;
     text-align: left;
-    font: Bold 431px/495px Nunito;
+    font: Bold 500px/560px Nunito;
     color: var(--logo-body);
     opacity: 0.06;
     user-select: none;
