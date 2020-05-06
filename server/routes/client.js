@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/', clientController.getSearch);
 router.post('/', clientController.postSearch);
+router.get('/search', clientController.getSearchList);
 
 router.get('/stock/:symbol', clientController.getStock);
 

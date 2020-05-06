@@ -1,9 +1,25 @@
-$(() => {
-    $('[data-toggle="tooltip"]').tooltip()
-})
+$('#searchTerm').on('input', () => {
+    $.ajax({
+        url: '/search',
+        method: 'GET',
+        data: { search: $('#searchTerm').val() }
+    }).fail((err) => {
+        console.log(err.responseJSON);
+    }).done((data) => {
+        var str = '';
+        data.result.forEach((item) => {
+            str += '<option value="' + item.symbol + '" />';
+        });
+        document.getElementById("symbol").innerHTML = str;
+    });
+});
 
 $(() => {
-    $("#modalContactFormSubmit").on("click", (e) => {
+    $('[data-toggle="tooltip"]').tooltip()
+});
+
+$(() => {
+    $('#modalContactFormSubmit').on('click', (e) => {
         e.preventDefault();
         if (validateContactForm()) {
 
@@ -14,11 +30,11 @@ $(() => {
             };
 
             $.ajax({
-                url: "/contact",
-                type: "POST",
+                url: '/contact',
+                type: 'POST',
                 data: formData,
                 success: (data) => {
-                    $("#modalContactForm").modal("hide");
+                    $('#modalContactForm').modal('hide');
                     alert('Success!');
                 },
                 fail: (data) => {
@@ -31,9 +47,9 @@ $(() => {
 });
 
 function validateContactForm() {
-    return $("#name").val() && $("#email").val() && validateEmail($("#email").val()) && $("#message").val();
-}
+    return $('#name').val() && $('#email').val() && validateEmail($('#email').val()) && $('#message').val();
+};
 
 function validateEmail(email) {
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-}
+};

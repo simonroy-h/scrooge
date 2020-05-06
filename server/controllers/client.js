@@ -2,6 +2,8 @@ const moment = require('moment');
 const nodemailer = require('nodemailer');
 
 const Analytics = require('../models/analytics');
+const Stock = require('../models/stock');
+
 const stockService = require('../service/stock');
 
 exports.getSearch = (req, res, next) => {
@@ -18,6 +20,12 @@ exports.getSearch = (req, res, next) => {
 
 exports.postSearch = (req, res, next) => {
     res.redirect('/stock/' + req.body.symbol.toUpperCase().trim());
+};
+
+exports.getSearchList = (req, res, next) => {
+    Stock.find({ symbol: { $regex : '.*' + req.query.search + '.*', $options: 'i' } }, {symbol: 1, _id: 0}, (err, result) => {
+        res.status(200).json({result: result});
+    });
 };
 
 exports.getStock = (req, res, next) => {
